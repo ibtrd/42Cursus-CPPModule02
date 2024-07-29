@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:16:09 by ibertran          #+#    #+#             */
-/*   Updated: 2024/07/25 19:09:33 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/07/29 03:38:53 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 class Fixed
 {
 	public:
-	Fixed(void);
-	Fixed(const Fixed &);
-	Fixed&operator=(const Fixed &);
-	~Fixed(void);
+		Fixed(void);
+		Fixed(const Fixed &);
+		~Fixed(void);
+		Fixed&	operator=(const Fixed &);
 
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
+		int		getRawBits(void) const;
+		void	setRawBits(int const);
 
 	private:
 		int					_value;
