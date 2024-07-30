@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:16:09 by ibertran          #+#    #+#             */
-/*   Updated: 2024/07/29 17:57:30 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/07/30 01:15:53 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class Fixed
 		int		toInt(void) const;
 
 	private:
-		long				_value;
+		int					_value;
 		static const int	_fractionalBits;
 };
 

@@ -59,6 +59,10 @@ fclean :
 re : fclean
 	$(MAKE)
 
+.PHONY : run
+run : $(NAME)
+	./$(NAME)
+
 .PHONY : print-%
 print-% :
 	@echo $(patsubst print-%,%,$@)=
