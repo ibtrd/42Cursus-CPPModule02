@@ -3,7 +3,7 @@ NAME = ex00
 # *** FILES ****************************************************************** #
 
 MAKE_DIR := .make/
-BUILD_DIR := $(MAKE_DIR)$(shell git branch --show-current)/
+BUILD_DIR := $(MAKE_DIR)$(shell git branch --show-current 2>/dev/null)/
 
 SRCS_DIR = srcs/
 SRCS = $(addsuffix .cpp, $(SRC))

@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:16:07 by ibertran          #+#    #+#             */
-/*   Updated: 2024/07/29 16:07:44 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/17 22:04:48 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,7 @@ const int Fixed::_fractionalBits = 8;
 
 /* ORTHODOX CANONICAL FORM ************************************************** */
 
-Fixed::Fixed(void)
-: _value(0)
+Fixed::Fixed(void) : _value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -40,7 +39,7 @@ Fixed	&Fixed::operator=(const Fixed &other)
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this == &other)
 		return (*this);
-	this->_value = other.getRawBits();
+	this->setRawBits(other.getRawBits());
 	return (*this);
 }
 
