@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 06:12:03 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/18 03:38:29 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/18 22:09:09 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed	getSide(const Point &a, const Point &b, const Point &p)
 	return (cross1 - cross2);
 }
 
-bool bsp( Point const &a, Point const b, Point const c, Point const point)
+bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
 	Fixed s1(getSide(a, b, point));
 	Fixed s2(getSide(b, c, point));

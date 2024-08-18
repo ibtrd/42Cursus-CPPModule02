@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:15:32 by ibertran          #+#    #+#             */
-/*   Updated: 2024/08/18 03:56:58 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/18 22:09:12 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "Point.hpp"
 
-bool bsp(Point const &a, Point const b, Point const c, Point const point);
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 int    main()
 {
