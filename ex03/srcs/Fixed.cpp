@@ -6,11 +6,11 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/24 15:16:07 by ibertran          #+#    #+#             */
-/*   Updated: 2024/07/30 09:34:35 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/18 03:03:29 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+// #include <iostream>
 #include <cmath>
 
 #include "Fixed.hpp"
@@ -19,20 +19,17 @@ const int	Fixed::_fractionalBits = 8;
 
 /* CONSTRUCTORS ************************************************************* */
 
-Fixed::Fixed(void)
-: _value(0)
+Fixed::Fixed(void) : _value(0)
 {
 	// std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int n)
-: _value(n << _fractionalBits)
+Fixed::Fixed(const int n) : _value(n << _fractionalBits)
 {
 	// std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed(const float n)
-: _value(roundf(n * (1 << _fractionalBits)))
+Fixed::Fixed(const float n) : _value(roundf(n * (1 << _fractionalBits)))
 {
 	// std::cout << "Float constructor called" << std::endl;
 }
@@ -167,22 +164,22 @@ Fixed	Fixed::operator--(int)
 
 Fixed 		&Fixed::min(Fixed &a, Fixed &b)
 {
-	return (a > b ? b : a);
+	return (a < b ? a : b);
 }
 
 const Fixed	&Fixed::min(const Fixed &a, const Fixed &b)
 {
-	return (a > b ? b : a);
+	return (a < b ? a : b);
 }
 
 Fixed		&Fixed::max(Fixed &a, Fixed &b)
 {
-	return (a < b ? b : a);
+	return (a > b ? a : b);
 }
 
 const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
-	return (a < b ? b : a);
+	return (a > b ? a : b);
 }
 
 /* ************************************************************************** */
