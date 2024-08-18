@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 04:44:44 by ibertran          #+#    #+#             */
-/*   Updated: 2024/07/30 08:40:26 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/18 03:07:52 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,32 @@
 
 /* CONSTRUCTORS ************************************************************* */
 
-Point::Point(void)
-: _x(0), _y(0)
+Point::Point(void) : _x(0), _y(0)
 {
-	// std::cout << "Const par default" << std::endl;
+	// std::cout << "Point Default constructor called" << std::endl;
 }
 
-Point::Point(const Point &other)
-: _x(other.getX()), _y(other.getY())
+Point::Point(const Point &other) : _x(other.getX()), _y(other.getY())
 {
+	// std::cout << "Point Copy constructor called" << std::endl;
 	*this = other;
-	// std::cout << "Const par CPY" << std::endl;
 }
 
-Point::Point(const float init_x, const float init_y)
-: _x(init_x), _y(init_y)
+Point::Point(const float init_x, const float init_y) : _x(init_x), _y(init_y)
 {
-	// std::cout << "Const float float" << std::endl;
+	// std::cout << "Point Float constructor called" << std::endl;
 }
 
-Point::Point(const Fixed &init_x, const Fixed &init_y)
-: _x(init_x), _y(init_y)
+Point::Point(const Fixed &init_x, const Fixed &init_y) : _x(init_x), _y(init_y)
 {	
-	// std::cout << "Const fix fix" << std::endl;
+	// std::cout << "Point Fixed constructor called" << std::endl;
 }
 
 /* DESTRUCTOR *************************************************************** */
 
 Point::~Point(void)
 {
+	// std::cout << "Point destructor called" << std::endl;
 }
 
 /* ASIGNMENT OPERATOR ******************************************************* */
@@ -53,7 +50,6 @@ Point	&Point::operator=(const Point &other)
 {
 	if (this == &other)
 		return (*this);
-	// Copy instructions
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ibertran <ibertran@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 06:12:03 by ibertran          #+#    #+#             */
-/*   Updated: 2024/07/31 23:53:56 by ibertran         ###   ########lyon.fr   */
+/*   Updated: 2024/08/18 03:38:29 by ibertran         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,20 @@
 
 #include "Point.hpp"
 
-Fixed	crossProduct(const Point &p1, const Point &p2)
+Fixed	getSide(const Point &a, const Point &b, const Point &p)
 {
-	return ((p1.getX() * p2.getY()) - (p1.getY() * p2.getX()));
+	Fixed cross1((a.getX() - p.getX()) * (b.getY() - p.getY()));
+	Fixed cross2((a.getY() - p.getY()) * (b.getX() - p.getX()));
+
+	return (cross1 - cross2);
 }
 
 bool bsp( Point const &a, Point const b, Point const c, Point const point)
 {
-	Point	v0(b.getX() - a.getX(), b.getY() - a.getY());
-	Point	v1(c.getX() - b.getX(), c.getY() - b.getY());
-	Point	v2(a.getX() - c.getX(), a.getY() - c.getY());
+	Fixed s1(getSide(a, b, point));
+	Fixed s2(getSide(b, c, point));
+	Fixed s3(getSide(c, a, point));
 
-	Point	pa(point.getX() - a.getX(), point.getY() - a.getY());
-	Point	pb(point.getX() - b.getX(), point.getY() - b.getY());
-	Point	pc(point.getX() - c.getX(), point.getY() - c.getY());
-
-	Fixed	cross0(crossProduct(v0, pa));
-	Fixed	cross1(crossProduct(v1, pb));
-	Fixed	cross2(crossProduct(v2, pc));
-
-	return (cross1 >= 0 && cross2 >= 0 && cross2 >= 0);
+	return ((s1 > 0 && s2 > 0 && s3 > 0) || (s1 < 0 && s2 < 0 && s3 < 0));
 }
+
